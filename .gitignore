@@ -1,0 +1,10 @@
+# --- 数据 / 输出 / 模型 (不提交) ---
+data/*.csv
+*.npy
+*.joblib
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# --- 提交 CSV (只保留最终版) ---
+submission_*.csv
