@@ -51,10 +51,10 @@ RealMLP（精简版，Demidov 配置，来源 busyaprime/yekenot）：
 - `tabpfn_repro.py` / `complementarity_screen.py` — TabPFN 32k
 - `blend_ours.py` / `blend_ours_submit.py` — 多腿网格搜索（OOF 搜权会高估，见教训）
 
-提交（`submissions/`）：
-- `submission_realmlp_5050.csv` — 0.96121
-- `submission_final_0.96126.csv` — **0.96126（当前自有最佳）**
-- `submission_blend_ours_5leg.csv` — 0.96116（网格搜权公榜反转）
+提交（`submissions/`，仅最终版入库，其余为中间结果、只记 LB）：
+- `submission_final_0.96126.csv` — **0.96126（当前自有最佳，已入库）**
+- `submission_realmlp_5050.csv` — 0.96121（中间，未入库）
+- `submission_blend_ours_5leg.csv` — 0.96116（中间，网格搜权公榜反转，未入库）
 
 ## 关键教训
 
@@ -70,4 +70,5 @@ RealMLP（精简版，Demidov 配置，来源 busyaprime/yekenot）：
 - 竞赛数据：`data/playground-series-s6e10/`
 - 原始数据：`C:/Users/GEM07/.cache/kagglehub/datasets/teejmahal20/airline-passenger-satisfaction/versions/1/`
 - 自有融合缓存：`cache/oof_route_aux_l.npy`、`oof_route_aux_x.npy`、`oof_route_tabm.npy`、`oof_realmlp_lean.npy` 等
+- context/tabm OOF 组件：`digit_confirm_results/refined_components.npz`（context_oof/route_tabm_oof/train_id），以及 context 的 test 预测 `.../OneDrive/Desktop/s6e10_outer10_blend/previous_context_ensemble.npz`
 - 0.96126 基线：`C:/Users/GEM07/Documents/Codex/.../outputs/deep_xgb_confirmation/full_096126/predictions.npz`（含 oof_candidate/pred_candidate）
