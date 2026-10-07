@@ -53,7 +53,7 @@ RealMLP（精简版，Demidov 配置，来源 busyaprime/yekenot）：
 
 提交（`submissions/`）：
 - `submission_realmlp_5050.csv` — 0.96121
-- `submission_xgb_deep.csv` — **0.96126（当前自有最佳）**
+- `submission_final_0.96126.csv` — **0.96126（当前自有最佳）**
 - `submission_blend_ours_5leg.csv` — 0.96116（网格搜权公榜反转）
 
 ## 关键教训
