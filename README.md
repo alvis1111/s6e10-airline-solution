@@ -1,6 +1,6 @@
 # Kaggle Playground S6E10 — Predicting Airline Satisfaction
 
-二分类（ROC-AUC）。**最终公榜 0.96100**（从 0.95862 起，+0.00238），第一名 0.96167。
+二分类（ROC-AUC）。本仓库主体是 **0.96100** 的三路融合方案（从 0.95862 起，+0.00238）。后续「漏掉的杠杆」独立复现把**自有成绩推到 0.96126**，抄公开 Busy53 到 0.96169（榜一 0.96177）——见 `independent_repro/`。
 
 ## 最终方案（三路融合）
 
@@ -43,6 +43,7 @@
 ├── notebooks/
 │   └── s6e10_solution.ipynb  # 讲解版 notebook（EDA + 洞察 + 基线）
 ├── data/                    # 数据下载说明（数据不提交）
+├── independent_repro/       # 「漏掉的杠杆」独立复现（0.96100 → 0.96126），见其 README
 └── submission_final_0.96100.csv  # 最终提交
 ```
 
