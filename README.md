@@ -64,7 +64,7 @@ python src/fusion.py               # 早期 ens/tree/TabM 融合（非最终 30/
 
 ## 已验证无效（别重走）
 
-GBDT 超参调优、弱 TE、特征穷举（聚合/交互/0标志/3-way）、NN（MLP/embedding/NN+TE/RealMLP/TabM 全 0.957）、AutoGluon、伪标签、分组模型、真实数据加权训练、删噪声特征、评分×年龄/航程交互。
+GBDT 超参调优、弱 TE、特征穷举（聚合/交互/0标志/3-way）、NN（MLP/embedding/NN+TE/TabM 全 0.957；RealMLP 默认配置 0.957 是死路，但 Demidov 调参后 0.9613 是后续独立复现的最大赢家，见 `independent_repro/`）、AutoGluon、伪标签、分组模型、真实数据加权训练、删噪声特征、评分×年龄/航程交互。
 
 ## 环境
 
