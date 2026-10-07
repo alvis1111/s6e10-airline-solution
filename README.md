@@ -37,7 +37,7 @@
 │   ├── route_profile.py      # 航线画像 + 原始数据 + 精确TE + 10折 GBDT（核心）
 │   ├── tabm_route.py         # 航线画像 TabM（NN 第三条腿）
 │   ├── te_cond_freq.py       # 条件TE + 频率 GBDT 集成
-│   ├── fusion.py             # 三路融合
+│   ├── fusion.py             # 早期 ens/tree/TabM 融合（非最终 30/30/40）
 │   └── te_proper.py          # 正确 TE 复现（教学）
 ├── experiments/             # 25 个实验/死路脚本（早期 GBDT、NN、特征搜索、伪标签等）
 ├── notebooks/
@@ -53,8 +53,13 @@ pip install -r requirements.txt
 # 数据放 data/playground-series-s6e10/（train.csv/test.csv/sample_submission.csv）
 python src/route_profile.py        # 航线画像 GBDT（需 CPU 数十分钟）
 python src/tabm_route.py           # 航线画像 TabM（需 CUDA GPU）
-python src/fusion.py               # 三路融合
+python src/fusion.py               # 早期 ens/tree/TabM 融合（非最终 30/30/40）
 ```
+
+> ⚠️ 复现说明：`src/fusion.py` 是**早期**的「我的集成 + 并行树 + 反推 TabM」2-way/3-way 融合，
+> **不是**最终 30/30/40 的三路融合。最终 0.96100 = rank-blend 三腿：`route_profile.py`（航线画像 GBDT）
+> + **context_boost（条件 TE + 频率，并行会话产物，未随本仓库提交）** + `tabm_route.py`（TabM）。
+> 三腿权重 30/30/40 是简单的 rank 平均，融合脚本未单列。
 
 ## 已验证无效（别重走）
 
