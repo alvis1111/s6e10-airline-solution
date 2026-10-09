@@ -27,6 +27,12 @@
 | 深层 XGBoost | 贴线正，+0.00001 LB |
 | 深度 8 CatBoost | fold 0 负，停 |
 | 网格搜索 5 路权重 | OOF 高估、公榜反转（0.96116 < 0.96126） |
+| 成对排序损失（AUC 导向融合器） | 公平正则下与 log-loss 打平，无增益 |
+| 非负权重约束 | 掉 −0.000079（负权重是纠偏机制，禁掉反而掉） |
+| 分组正则化（同配置种子） | 无效（Δ≈0，λ 扫 1→1e7） |
+| sachith7 公开成员（10 折） | 近重复，公榜持平 0.96169 |
+| FT-Transformer（FTT） | 首折负（单模型 0.9587） |
+| TabR（检索增强，适配版） | 首折负（单模型 0.9575，整折 5.5h） |
 
 ## 脚本索引
 
@@ -50,6 +56,12 @@ RealMLP（精简版，Demidov 配置，来源 busyaprime/yekenot）：
 - `digit_paired.py` / `digit_delong.py` — 整数数字位
 - `tabpfn_repro.py` / `complementarity_screen.py` — TabPFN 32k
 - `blend_ours.py` / `blend_ours_submit.py` — 多腿网格搜索（OOF 搜权会高估，见教训）
+- `rank_fuser.py` / `rank_fuser_check.py` — 成对排序损失（AUC 导向融合器）
+- `nonneg_fuser.py` — 非负权重约束
+- `group_fuser.py` — 分组正则化（同配置种子）
+- `add_sachith7.py` / `add_sachith7_submit.py` — sachith7 公开成员
+- `ftt_fold.py` — FT-Transformer（需 skorch）
+- `tabr_fold.py` / `tabr_compat.py` — TabR（用户适配，分块 PyTorch 检索）
 
 提交（`submissions/`，仅最终版入库，其余为中间结果、只记 LB）：
 - `submission_final_0.96126.csv` — **0.96126（当前自有最佳，已入库）**
