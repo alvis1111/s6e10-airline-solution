@@ -33,6 +33,7 @@
 | sachith7 公开成员（10 折） | 近重复，公榜持平 0.96169 |
 | FT-Transformer（FTT） | 首折负（单模型 0.9587） |
 | TabR（检索增强，适配版） | 首折负（单模型 0.9575，整折 5.5h） |
+| 标签条件辅助任务（Wi-Fi） | ⏸ 暂停（fold 0 微小正 +0.000005，未做第二折） |
 
 ## 脚本索引
 
@@ -62,6 +63,7 @@ RealMLP（精简版，Demidov 配置，来源 busyaprime/yekenot）：
 - `add_sachith7.py` / `add_sachith7_submit.py` — sachith7 公开成员
 - `ftt_fold.py` — FT-Transformer（需 skorch）
 - `tabr_fold.py` / `tabr_compat.py` — TabR（用户适配，分块 PyTorch 检索）
+- `label_cond_ablation.py` / `label_cond_aux.py` — 标签条件辅助任务（Wi-Fi log-ratio 特征）
 
 提交（`submissions/`，仅最终版入库，其余为中间结果、只记 LB）：
 - `submission_final_0.96126.csv` — **0.96126（当前自有最佳，已入库）**
