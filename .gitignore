@@ -1,10 +1,26 @@
 # --- 数据 / 输出 / 模型 (不提交) ---
 data/*.csv
+data/playground-series-s6e10/
+data/__MACOSX/
 *.npy
+*.npz
 *.joblib
+*.pkl
+*.pt
+*.ckpt
 __pycache__/
 *.pyc
 .ipynb_checkpoints/
+
+# --- 中间产物 (日志 / 缓存 / 外部拉取) ---
+*.log
+cache/
+catboost_info/
+rtdl_checkpoints/
+tabpfn_repro/
+digit_confirm_results/
+pulled/
+pulled_*/
 
 # --- 提交 CSV (只保留最终版) ---
 submission_*.csv
